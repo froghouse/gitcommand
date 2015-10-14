@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+    echo "You need to supply an email address"
+    exit 1
+fi
+
+ssh-keygen -t rsa -b 4096 -C "$EMAIL"
+xclip -sel clip < ~/.ssh/id_rsa.pub
