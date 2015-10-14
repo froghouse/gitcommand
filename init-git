@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+    echo "You need to specify a git repository to push to."
+    exit 1
+fi
+
+git init
+git add .
+git commit -m 'Initialized repository'
+git remote add origin "$1"
+git push origin master
